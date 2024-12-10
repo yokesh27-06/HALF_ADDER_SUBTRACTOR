@@ -50,15 +50,24 @@ Figure -02 HALF Subtractor
 
 **Program:**
 ```
-
-module exp3(a,b,cy,sm,df,bo);
+*Half_adder*
+module HALFADDER(a,b,sum,carry);
 input a,b;
-output sm,cy,df,bo;
-xor(sm,a,b);
-and(cy,a,b);
-xor(df,a,b);
-and(boi,~a,b);
+output sum,carry; 
+ assign sum = a^b;
+ assign carry = a & b;
 endmodule
+
+*Half_subtractor*
+module SUB(a,b,D,Bo);
+input a,b;
+output D,Bo; // Outputs sum and carry for half adder:Outputs difference D,Borrow Bo for half subtractor
+assign D = a ^ b;
+  assign Bo = ~a & b;
+endmodule
+
+
+
 ```
 /* Program to design a half adder and full adder circuit and verify its truth table in quartus using Verilog programming.
 
@@ -66,11 +75,13 @@ Developed by: YOKESH H
 RegisterNumber:24005930
 
 **RTL Schematic**
-![WhatsApp Image 2024-12-03 at 18 31 59_77d3d793](https://github.com/user-attachments/assets/98a6e004-9e1a-41e4-97d4-adc9bad932d6)
+![Screenshot 2024-12-10 143735](https://github.com/user-attachments/assets/12fcbbcc-cacd-4c31-97d2-876f38d28a68)
+![Screenshot 2024-12-10 143819](https://github.com/user-attachments/assets/73e0771e-046f-4dfb-ac96-40ccd050dac7)
 
 
 **Output/TIMING Waveform**
-![WhatsApp Image 2024-12-03 at 18 29 28_67f8b66e](https://github.com/user-attachments/assets/e9c1fe17-7349-4f56-9a90-5b6092f1ac60)
+![Screenshot 2024-12-10 144123](https://github.com/user-attachments/assets/7e0aed16-d3fe-4b0d-b721-a5c1c0909fbc)
+![Screenshot 2024-12-10 144203](https://github.com/user-attachments/assets/1f0585b5-005a-40a7-89a0-0c89ce20d81c)
 
 
 **Result:**
