@@ -85,3 +85,4 @@ RegisterNumber:24005930
 
 
 **Result:**
+The half adder subtractor are the output is verified.
